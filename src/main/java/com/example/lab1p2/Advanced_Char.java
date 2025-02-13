@@ -1,14 +1,23 @@
 package com.example.lab1p2;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
-public class HelloController {
-    @FXML
-    private Label welcomeText;
+abstract class Advanced_Char extends Pane implements CharPanel {
+    public Advanced_Char() {
+        setPrefSize(400,300);
+        setPanelBackground();
+        addCharacter();
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    }
+    public void setPanelBackground(){
+        setBackground(new Background(new BackgroundFill(Color.DEEPPINK,null,null)));
+    }
+    public void addCharacter(){
+        ImageView imageView = new ImageView(getClass().getResource("/images/adv_char.png").toExternalForm());
+        imageView.setFitWidth(300);
+        imageView.setFitHeight(200);
+        getChildren().add(imageView);
     }
 }

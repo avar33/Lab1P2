@@ -5,12 +5,13 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
-abstract public class Intermediate_Char extends Pane implements CharPanel {
+
+abstract public class Advanced_Weapon extends Pane implements WeaponPanel{
     public void setBackground(){
-        setBackground(new Background(new BackgroundFill(Color.HOTPINK,null,null)));
+        setBackground(new Background(new BackgroundFill(Color.DARKBLUE, null, null)));
     }
-    public void addCharacter(){
-        ImageView imageView = new ImageView(getClass().getResource("/images/inter_char.png").toExternalForm());
+    public void addWeapon(){
+        ImageView imageView = new ImageView(getClass().getResource("/images/adv_weapon.png").toExternalForm());
         imageView.setFitWidth(300);
         imageView.setFitHeight(200);
         getChildren().add(imageView);
