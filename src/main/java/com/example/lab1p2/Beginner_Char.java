@@ -1,30 +1,30 @@
 package com.example.lab1p2;
 
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 abstract class Beginner_Char extends Pane implements CharPanel{
     public Beginner_Char(){
         setPrefSize(400,300);
         setPanelBackground();
         addCharacter();
-        //TODO: add label for each level
     }
     public void setPanelBackground(){
         setBackground(new Background(new BackgroundFill(Color.LIGHTPINK,null,null)));
     }
     public void addCharacter(){
         ImageView imageView = new ImageView(getClass().getResource("/images/beginner_char.png").toExternalForm());
+        Text beginnerMode = new Text("beginner mode");
+        beginnerMode.setFont(new Font(50));
         imageView.setFitWidth(300);
         imageView.setFitHeight(200);
-        StackPane stackPane = new StackPane();
-        stackPane.setPrefSize(getPrefWidth(), getPrefHeight()); // sets it within the constraints of the background
-        stackPane.getChildren().add(imageView); // add image
+        VBox vbox = new VBox();
+        vbox.setPrefSize(getPrefWidth(), getPrefHeight()); // sets it within the constraints of the background
+        vbox.getChildren().addAll(beginnerMode, imageView); // add image
 
-        getChildren().add(stackPane);
+        getChildren().add(vbox);
     }
 }
