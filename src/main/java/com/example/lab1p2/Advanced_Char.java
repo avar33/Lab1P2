@@ -9,15 +9,19 @@ abstract class Advanced_Char extends Pane implements CharPanel {
         setPrefSize(400,300);
         setPanelBackground();
         addCharacter();
-
+        //TODO: add label for each level
     }
     public void setPanelBackground(){
-        setBackground(new Background(new BackgroundFill(Color.DEEPPINK,null,null)));
+        setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE,null,null)));
     }
     public void addCharacter(){
         ImageView imageView = new ImageView(getClass().getResource("/images/adv_char.png").toExternalForm());
-        imageView.setFitWidth(300);
-        imageView.setFitHeight(200);
-        getChildren().add(imageView);
+        imageView.setFitWidth(350);
+        imageView.setFitHeight(175);
+        StackPane stackPane = new StackPane();
+        stackPane.setPrefSize(getPrefWidth(), getPrefHeight());
+        stackPane.getChildren().add(imageView);
+
+        getChildren().add(stackPane);
     }
 }
